@@ -1,15 +1,13 @@
 %define upstream_name    Image-Resize
-%define upstream_version 0.5
-
 Name:		perl-%{upstream_name}
-Version:	%{upstream_version}
-Release:	6
+Version:	0.5
+Release:	7
 
 Summary:	Simple image resizer using GD
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		https://metacpan.org/dist/Image-Resize
-Source0:	https://cpan.metacpan.org/authors/id/S/SH/SHERZODR/Image-Resize-%{upstream_version}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/S/SH/SHERZODR/Image-Resize-%{version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -31,7 +29,7 @@ when Image::Magick lets me say:
     $image->Scale(-geometry=>'250x250');
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
@@ -56,9 +54,7 @@ perl Makefile.PL INSTALLDIRS=vendor
 
 * Fri Feb 12 2010 Jérôme Quelin <jquelin@mandriva.org> 0.500.0-1mdv2011.0
 + Revision: 504933
-- rebuild using %%perl_convert_version
-
-* Fri Sep 04 2009 Thierry Vignaud <tv@mandriva.org> 0.5-2mdv2010.0
+- rebuild using %0.5 Fri Sep 04 2009 Thierry Vignaud <tv@mandriva.org> 0.5-2mdv2010.0
 + Revision: 430470
 - rebuild
 
